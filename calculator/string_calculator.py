@@ -1,5 +1,8 @@
 def add(numbers: str) -> int:
     if len(numbers) == 0:
         return 0
-    if int(numbers):
-        return int(numbers)
+    
+    numbers = numbers.split(',')
+    numbers = [int(i) for i in numbers]
+    
+    return sum(numbers)
