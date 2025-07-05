@@ -33,3 +33,6 @@ class TestStringCalculator(unittest.TestCase):
         
     def test_number_greeater_than_1000_input(self):
         self.assertEqual(add("10234,32"),32)
+        
+    def test_custom_delimeter_of_any_length(self):
+        self.assertEqual(add('//[***]\n1***2***3'),6)
