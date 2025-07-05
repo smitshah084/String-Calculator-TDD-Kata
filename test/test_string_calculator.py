@@ -29,4 +29,4 @@ class TestStringCalculator(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             add("-3,4")
         
-        self.assertIn("negative numbers not allowed", str(context.exception))
+        self.assertIn(f"negative numbers not allowed {-3}", str(context.exception))

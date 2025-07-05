@@ -13,6 +13,12 @@ def add(numbers: str) -> int:
         elif '\n' in numbers:
             numbers = numbers.split('\n')
         
-    numbers = [int(i) for i in numbers]
+    numbers_l = []
     
-    return sum(numbers)
+    for i in numbers:
+        i = int(i)
+        if i < 0:
+            raise ValueError(f"negative numbers not allowed {i}")
+        numbers_l.append(i)
+    
+    return sum(numbers_l)
