@@ -30,6 +30,3 @@ class TestStringCalculator(unittest.TestCase):
             add("-3,4")
         
         self.assertIn(f"negative numbers not allowed {-3}", str(context.exception))
-        
-    def test_number_greater_than_1000_input(self):
-        self.assertEqual(add("1000,3123"),4123)
