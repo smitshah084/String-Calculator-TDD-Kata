@@ -26,6 +26,7 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(add("//;\n1;43;23"),67)
         
     def test_negative_number_input(self):
-        self.assertEqual(add("-2,-4"),-6)
+        with self.assertRaises(ValueError) as context:
+            add("-3,4")
         
-        
+        self.assertIn("negative numbers not allowed", str(context.exception))
