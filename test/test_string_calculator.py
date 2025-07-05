@@ -1,4 +1,5 @@
 import unittest
+import random
 from calculator import add
 
 class TestStringCalculator(unittest.TestCase):
@@ -14,3 +15,8 @@ class TestStringCalculator(unittest.TestCase):
         
     def test_n_number_input(self):
         self.assertEqual(add("1,3,3432,13"),3449)
+        numbers = [random.randint(0, 100) for _ in range(20)]
+        input_str = ",".join(map(str, numbers))
+        self.assertEqual(add(input_str), sum(numbers))
+        
+        
