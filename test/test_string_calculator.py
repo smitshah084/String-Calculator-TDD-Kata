@@ -36,3 +36,6 @@ class TestStringCalculator(unittest.TestCase):
         
     def test_custom_delimeter_of_any_length(self):
         self.assertEqual(add('//[***]\n1***2***3'),6)
+        
+    def test_allow_multiple_delimeters(self):
+        self.assertEqual(add("//[*][%]\n1*2%3"),6)
