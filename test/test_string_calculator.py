@@ -22,4 +22,7 @@ class TestStringCalculator(unittest.TestCase):
     def test_slash_n_delimiter(self):
         self.assertEqual(add("1\n3"),4)
         
+    def test_custom_delimiter(self):
+        self.assertEqual(add("//;\n1;43;23"),67)
+        
         
