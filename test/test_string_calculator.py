@@ -25,4 +25,7 @@ class TestStringCalculator(unittest.TestCase):
     def test_custom_delimiter(self):
         self.assertEqual(add("//;\n1;43;23"),67)
         
+    def test_negative_number_input(self):
+        self.assertEqual(add("-2,-4"),-6)
+        
         
