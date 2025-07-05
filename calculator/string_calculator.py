@@ -2,10 +2,13 @@ def add(numbers: str) -> int:
     if len(numbers) == 0:
         return 0
     
-    if numbers[:2] == "//" and numbers[3] == '\n':
+    if numbers[:2] == "//":
         # custom delimiter is defined
-        delimiter = numbers[2]
-        numbers = numbers[4:]
+        ix = numbers.index('\n')
+        delimiter = numbers[2:ix]
+        if delimiter[0] == '[' and delimiter[-1] == ']':
+            delimiter = delimiter[1:-1]
+        numbers = numbers[ix:]
         numbers = numbers.split(delimiter)
     else:
         if ',' in numbers:
