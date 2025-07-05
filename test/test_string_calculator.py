@@ -14,7 +14,7 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(add("1,1"),2)
         
     def test_n_number_input(self):
-        self.assertEqual(add("1,3,3432,13"),3449)
+        self.assertEqual(add("1,3,3432,13"),17)
         numbers = [random.randint(0, 100) for _ in range(20)]
         input_str = ",".join(map(str, numbers))
         self.assertEqual(add(input_str), sum(numbers))
@@ -30,3 +30,6 @@ class TestStringCalculator(unittest.TestCase):
             add("-3,4")
         
         self.assertIn(f"negative numbers not allowed {-3}", str(context.exception))
+        
+    def test_number_greeater_than_1000_input(self):
+        self.assertEqual(add("10234,32"),32)
