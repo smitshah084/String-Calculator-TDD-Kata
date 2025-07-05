@@ -11,3 +11,6 @@ class TestStringCalculator(unittest.TestCase):
         
     def test_two_number_input(self):
         self.assertEqual(add("1,1"),2)
+        
+    def test_n_number_input(self):
+        self.assertEqual(add("1,3,3432,13"),3449)
