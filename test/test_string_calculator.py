@@ -39,3 +39,6 @@ class TestStringCalculator(unittest.TestCase):
         
     def test_allow_multiple_delimeters(self):
         self.assertEqual(add("//[*][%]\n1*2%3"),6)
+        
+    def test_multiple_delimiters_with_length_longer_than_one(self):
+        self.assertEqual(add("//[***][%]\n1***2%3"),6)
