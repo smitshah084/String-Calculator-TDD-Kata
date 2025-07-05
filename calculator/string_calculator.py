@@ -19,6 +19,7 @@ def add(numbers: str) -> int:
         i = int(i)
         if i < 0:
             raise ValueError(f"negative numbers not allowed {i}")
-        numbers_l.append(i)
+        if i < 1000:
+            numbers_l.append(i)
     
     return sum(numbers_l)
