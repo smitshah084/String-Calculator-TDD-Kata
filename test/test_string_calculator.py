@@ -8,3 +8,6 @@ class TestStringCalculator(unittest.TestCase):
         
     def test_one_number_input(self):
         self.assertEqual(add("1"),1)
+        
+    def test_two_number_input(self):
+        self.assertEqual(add("1,1"),2)
