@@ -1,3 +1,5 @@
+import re
+
 def add(numbers: str) -> int:
     if len(numbers) == 0:
         return 0
@@ -8,8 +10,12 @@ def add(numbers: str) -> int:
         delimiter = numbers[2:ix]
         if delimiter[0] == '[' and delimiter[-1] == ']':
             delimiter = delimiter[1:-1]
+            
+        delimiters = delimiter.split('][')
+        escaped = [re.escape(d) for d in delimiters]
+        pattern = '|'.join(escaped)
         numbers = numbers[ix:]
-        numbers = numbers.split(delimiter)
+        numbers = re.split(pattern, numbers)
     else:
         if ',' in numbers:
             numbers = numbers.split(',')
