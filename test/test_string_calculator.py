@@ -19,4 +19,7 @@ class TestStringCalculator(unittest.TestCase):
         input_str = ",".join(map(str, numbers))
         self.assertEqual(add(input_str), sum(numbers))
         
+    def test_slash_n_delimiter(self):
+        self.assertEqual(add("1\n3"),4)
+        
         
